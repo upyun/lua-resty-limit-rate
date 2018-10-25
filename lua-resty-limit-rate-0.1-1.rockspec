@@ -1,11 +1,11 @@
 package = "lua-resty-limit-rate"
 version = "0.1-1"
 source = {
-   url = "git@github.com:upyun/lua-resty-limit-rate.git",
+   url = "git://github.com/upyun/lua-resty-limit-rate",
    tag = "v0.1",
 }
 description = {
-   summary = "Lua module for limiting request rate for OpenResty/ngx_lua, using the "token bucket" method",
+   summary = "Lua module for limiting request rate for OpenResty/ngx_lua, using the token bucket method",
    detailed = [[
         limiting request rate for OpenResty/ngx_lua.
    ]],
