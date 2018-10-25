@@ -1,3 +1,5 @@
+-- Copyright (C) UPYUN, Inc.
+
 -- limit request rate using the token bucket method:
 --    https://en.wikipedia.org/wiki/Token_bucket
 
@@ -31,7 +33,7 @@ local rec_cdata = ffi.new("struct lua_resty_limit_rate_rec")
 
 
 local _M = {
-    _VERSION = "0.01",
+    _VERSION = "0.1",
 }
 
 

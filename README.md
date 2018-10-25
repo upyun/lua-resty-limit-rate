@@ -135,15 +135,15 @@ Description
 
 This module provides APIs to help the OpenResty/ngx_lua user programmers limit request rate using the "[token bucket](https://en.wikipedia.org/wiki/Token_bucket)" method.
 
-If you want to use multiple different instances of this class at once or use one instance of this class with instances of other classes (like [resty.limit.conn](./conn.md)), then you *must* use the [resty.limit.traffic](./traffic.md) module to combine them.
+If you want to use multiple different instances of this class at once or use one instance of this class with instances of other classes (like [resty.limit.conn](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/conn.md)), then you *must* use the [resty.limit.traffic](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/traffic.md) module to combine them.
 
-The main difference between this module and [resty.limit.req](./req.md):
+The main difference between this module and [resty.limit.req](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/req.md):
 
-* [resty.limit.req](./req.md) limit request rate using the "leaky bucket" method, this module using the "token bucket" method.
+* [resty.limit.req](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/req.md) limit request rate using the "leaky bucket" method, this module using the "token bucket" method.
 
-The main difference between this module and [resty.limit.count](./count.md):
+The main difference between this module and [resty.limit.count](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/count.md):
 
-* [resty.limit.count](./count.md) offers a straightforward mental model that limit request rate by a fixed number of requests in given time window, but it can sometimes let through twice the number of allowed requests per minute. For example, if our rate limit were 10 requests per minute and a user made 10 requests at 10:00:59, they could make 10 more requests at 10:01:00 because a new counter begins at the start of each minute. In this case, this module able to control more precisely and smoothly.
+* [resty.limit.count](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/count.md) offers a straightforward mental model that limit request rate by a fixed number of requests in given time window, but it can sometimes let through twice the number of allowed requests per minute. For example, if our rate limit were 10 requests per minute and a user made 10 requests at 10:00:59, they could make 10 more requests at 10:01:00 because a new counter begins at the start of each minute. In this case, this module able to control more precisely and smoothly.
 
 Methods
 =======
@@ -261,7 +261,7 @@ uncommit
 --------
 **syntax:** `ok, err = obj:uncommit(key)`
 
-This tries to undo the commit of the `incoming` call. This is simply an approximation and should be used with care. This method is mainly for being used in the [resty.limit.traffic](./traffic.md) Lua module when combining multiple limiters at the same time.
+This tries to undo the commit of the `incoming` call. This is simply an approximation and should be used with care. This method is mainly for being used in the [resty.limit.traffic](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/traffic.md) Lua module when combining multiple limiters at the same time.
 
 [Back to TOC](#table-of-contents)
 
@@ -275,7 +275,7 @@ The limiting works on the granularity of an individual NGINX server instance (in
 Installation
 ============
 
-Please see [library installation instructions](../../../README.md#installation).
+Please see [library installation instructions](https://github.com/openresty/lua-resty-limit-traffic/blob/master/README.md#installation).
 
 [Back to TOC](#table-of-contents)
 
@@ -335,11 +335,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 See Also
 ========
-* module [resty.limit.req](./req.md)
-* module [resty.limit.conn](./conn.md)
-* module [resty.limit.count](./count.md)
-* module [resty.limit.traffic](./traffic.md)
-* library [lua-resty-limit-traffic](../../../README.md)
+* module [resty.limit.req](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/req.md)
+* module [resty.limit.conn](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/conn.md)
+* module [resty.limit.count](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/count.md)
+* module [resty.limit.traffic](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/traffic.md)
+* library [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic/blob/master/README.md)
 * the ngx_lua module: https://github.com/openresty/lua-nginx-module
 * OpenResty: https://openresty.org/
 
