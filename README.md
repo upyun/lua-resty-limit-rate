@@ -184,7 +184,7 @@ On failure, this method returns `nil` and a string describing the error (like a 
 
 incoming
 --------
-**syntax:** `delay, err = obj:take(key, commit)`
+**syntax:** `delay, err = obj:incoming(key, commit)`
 
 Fires a new request incoming event and calculates the delay needed (if any) for the current request
 upon the specified key or whether the user should reject it immediately.
